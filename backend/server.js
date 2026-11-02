@@ -13,7 +13,7 @@ const authRoutes=require('./routes/auth');
 const dataRoutes=require('./routes/data');
 const app=express();
 app.use(helmet());
-app.use(cors({origin:process.env.CLIENT_ORIGIN||'http://localhost:5173'}));
+app.use(cors({origin:process.env.CLIENT_ORIGIN||'https://senseiacad.vercel.app'}));
 app.use(express.json({limit:'2mb'}));
 app.get('/api/health',(req,res)=>res.json({status:'ok',service:'Sensei Academy API'}));
 app.use('/api/auth',authRoutes);
